@@ -6,9 +6,8 @@ import "./product.scss"
 
 const Product = (props) => {
     const { id, productName, productImage, price, special_sale } = props.data;
-    const { cartItems, addToCart, removeFromCart } = useContext(ShopContext)
+    const { addToCart } = useContext(ShopContext)
 
-    const isInCart = cartItems?.some((item) => item.id === id)
     return (
         <div className="bg-white relative p-2 h-[25rem] w-64 shadow-sm overflow-hidden rounded hover:shadow-2xl border-stone-200 border transition flex-col flex justify-center items-center ">
             <img src={productImage} className="w-64  h-[19rem] object-cover object-center overflow-hidden " />
@@ -23,7 +22,8 @@ const Product = (props) => {
                 {isInCart && <button className="btn btn-info btn-sm" onClick={() => removeFromCart(id)}>-</button>} */}
                 
                 <div>
-                    <button className="bg-gradient-to-r from-red-600 to-pink-600 text-gray-50 hover:from-pink-500 hover:to-pink-700 rounded-full py-2 px-4" onClick={() => addToCart(id)}>Add to cart</button>
+                    <button className="bg-gradient-to-r from-red-600 to-pink-600 text-gray-50 hover:from-pink-500 hover:to-pink-700 rounded-full py-2 px-4"
+                     onClick={() => addToCart(props.data)}>Add to cart</button>
                 </div>
             </div>
         </div>

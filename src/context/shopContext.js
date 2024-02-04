@@ -7,34 +7,33 @@ export const ShopContextProvider = (props) => {
     const items = values ? JSON.parse(values) : []
     const [cartItems, setCartItems] = useState(items)
 
-    // useEffect(()=>{
-    //     const data = localStorage.getItem("CARTITEMS")
-    //     setCartItems(!!JSON.parse(data) ? JSON.parse(data) : [])
-    // },[]) 
 
-    useEffect(()=>{
-        
-        localStorage.setItem("CARTITEMS" , JSON.stringify(cartItems))
-    },[cartItems])
+    useEffect(() => {
 
-    const addToCart = (itemId) => {
-        if (!cartItems?.find((item) => item.id === itemId))
-            setCartItems([...cartItems, { id: itemId, count: 1 }])
+        localStorage.setItem("CARTITEMS", JSON.stringify(cartItems))
+    }, [cartItems])
+
+    const addToCart = (item) => {
+
+        if (!cartItems?.find((x) => x.id === item.id))
+            setCartItems([...cartItems, { ...item, count: 1 }])
         else
-            setCartItems(cartItems.map((item) => {
-                if (item.id === itemId)
-                    return { ...item   , count: item.count + 1 }
-                else return item
+            setCartItems(cartItems.map((x) => {
+                if (x.id === item.id)
+                    return { ...item, count: x.count + 1 }
+                else return x
             }))
         console.log(cartItems)
     }
-    const removeFromCart =  (itemId) => {
-        setCartItems(cartItems.map((i) => {
-            if (i.id === itemId)
-                return { ...i, count: i.count === 0 ? 0 : i.count - 1 }
-            else return i
-        }))
 
+    const removeFromCart = (id) => {
+        setCartItems(cartItems.map((i) => {
+            debugger
+            const count = i?.count - 1;
+            if (i.id === id )
+                return count ? {...i,count} : null        
+            else return i
+        })?.filter(o => !!o))
     }
     const contextValue = { cartItems, addToCart, removeFromCart }
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
