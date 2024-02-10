@@ -3,11 +3,12 @@ import { BrowserRouter as Router , Route , Routes} from 'react-router-dom';
 import Shop from './pages/shop/shop';
 import Cart from './pages/cart/cart';
 import Nav from './components/nav';
-import {ShopContextProvider} from './context/shopContext'
-import Contact from './pages/contact';
-import Home from './pages/home';
-import Footer from './components/footer/footer';
-import AboutUs from './pages/aboutUs';
+import {ShopContextProvider} from './context/shopContext.tsx'
+import Contact from './pages/contact.tsx';
+// import Home from './pages/home';
+import Footer from './components/footer/footer.tsx';
+import AboutUs from './pages/aboutUs.tsx';
+import Home from './pages/home.tsx';
 
 function App() {
   return (

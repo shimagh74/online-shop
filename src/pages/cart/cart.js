@@ -1,13 +1,13 @@
+import React from "react";
 import { useContext } from "react";
 import { PRODUCTS } from "../../data/productsData";
-import { ShopContext } from "../../context/shopContext";
+import { ShopContext } from "../../context/shopContext.tsx";
 import CartProduct from "./CartProduct";
 
 // سبد خرید
 const Cart = () => {
-    const { cartItems } = useContext(ShopContext)
-    const { addToCart, removeFromCart } = useContext(ShopContext)
-
+    const { addToCart, removeFromCart ,cartItems } = useContext(ShopContext)
+console.log("ShopContext" ,ShopContext)
     const totalAmount = () => {
         // const items = PRODUCTS.map(o => ({...o,count: cartItems.find(x => x.id === o.id)?.count ?? 0}))
         return cartItems.reduce((acc, current) => {
@@ -16,7 +16,7 @@ const Cart = () => {
     }
 
     return (
-        <div class="flex  md:flex-row  flex-col w-full items-center justify-center m-auto mb-5 gap-4">
+        <div className="flex  md:flex-row  flex-col w-full items-center justify-center m-auto mb-5 gap-4">
             <div className="basis-4/5 border gap-3 flex flex-wrap  justify-center  ">
                 <div className="border-b w-11/12 ">
                     <h1 className="text-2xl p-5 ">Shopping Cart</h1>

@@ -1,3 +1,4 @@
+import React from 'react';
 import aboutUs from './../assets/img/aboutUs.jpg'
 const AboutUs = () => {
     return (

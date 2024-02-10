@@ -1,4 +1,6 @@
 import { IoLogoFacebook, IoLogoGithub, IoLogoInstagram, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
+import React from "react";
+
 
 export const PRODUCTS = [
   { name: "Drag And Drop", link: "#" },

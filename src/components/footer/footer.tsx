@@ -1,7 +1,7 @@
 import React from "react";
-import ItemsContainer from "./itemsContainer";
-import SocialIcons from "./socialIcons";
-import { Icons } from "./menus";
+import ItemsContainer from "./itemsContainer.tsx";
+import SocialIcons from "./socialIcons.tsx";
+import { Icons } from "./menus.tsx";
 
 const Footer = () => {
   return (
