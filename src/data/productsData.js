@@ -7,6 +7,7 @@ import e from './../assets/img/e.jpg'
 import f from './../assets/img/f.jpg'
 import g from './../assets/img/g.jpg'
 import h from './../assets/img/h.jpg'
+
 export const PRODUCTS =[
     {
         id :1 ,

@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext.tsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +16,7 @@ const Product = (props) => {
             <FontAwesomeIcon icon={faStar} color="white"/>
             </div> : null}
             <div className="p-4 grid justify-items-center h-2/5 px-6 pb-3">
-                <h3 class="font-medium  text-slate-800 ">{productName} </h3>
+                <h3 className="font-medium  text-slate-800 ">{productName} </h3>
                 <p className="text-base  text-gray-900 dark:text-white">{price}$</p>
                 {/* <button className="bg-zinc-700 rounded-2xl p-1" onClick={() => addToCart(id)}>+</button>
                 <span >{cartItems?.filter((row) => row.id === id)[0]?.count}</span>

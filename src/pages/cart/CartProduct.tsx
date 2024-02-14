@@ -1,3 +1,4 @@
+import React from "react";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import "./CartProduct.scss"
 

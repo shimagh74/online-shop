@@ -1,8 +1,16 @@
 import React from "react";
-import "./pagination.scss"
+import "./pagination.scss";
 
+interface PaginationProps {
+  postsPerPage: number;
+  totalPosts: number;
+  pageNumberClick: (pageNumber: number) => void;
+  nextPage: () => void;
+  prevPage: () => void;
+  currentPage: number;
+}
 
-const Pagination = ({
+const Pagination: React.FC<PaginationProps> = ({
   postsPerPage,
   totalPosts,
   pageNumberClick,
@@ -10,8 +18,7 @@ const Pagination = ({
   prevPage,
   currentPage,
 }) => {
-  
-  const pageNumbers = [];
+  const pageNumbers : number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
@@ -21,10 +28,8 @@ const Pagination = ({
     <div>
       <br />
       <ul className={!pageNumbers.length ? 'hidden' : 'flex justify-evenly'}>
-
         {/* PREVIOUS PAGE */}
-        <li className={currentPage === 1 ? 'hidden' : 'cursor-pointer'}
-          onClick={() => prevPage()} >
+        <li className={currentPage === 1 ? 'hidden' : 'cursor-pointer'} onClick={() => prevPage()}>
           Previous
         </li>
 
@@ -38,8 +43,7 @@ const Pagination = ({
         ))}
 
         {/* NEXT PAGE */}
-        <li className={currentPage === pageNumbers.length ? 'hidden' : 'cursor-pointer'}
-          onClick={() => nextPage()}>
+        <li className={currentPage === pageNumbers.length ? 'hidden' : 'cursor-pointer'} onClick={() => nextPage()}>
           Next
         </li>
       </ul>
@@ -48,4 +52,3 @@ const Pagination = ({
 };
 
 export default Pagination;
-

@@ -4,7 +4,7 @@ import onlineShopping from '../assets/img/online-shopping.jpg'
 import Subscribe from '../assets/img/subscribe.jpg'
 import { PRODUCTS } from '../data/productsData'
 import { useState } from 'react';
-import Product from './shop/product';
+import Product from './shop/product.tsx';
 import { BiSupport } from "react-icons/bi";
 import './home.scss';
 import img1 from "./../assets/img/img1.jpg"
@@ -77,13 +77,13 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-            <div className='flex flex-wrap justify-around md:justify-between container mx-auto my-4 place-items-center gap-4 p-2'>
+            <div className='flex flex-wrap lg:flex-nowrap justify-around md:justify-between container mx-auto my-4 place-items-center gap-4 p-2'>
                 {currentPosts.map((productData) => {
                     return <Product key={productData.id} data={productData} PRODUCTS={currentPosts} />
                 })
                 }
             </div>
-            <div className='rounded-lg shadow-lg my-20 flex flex-row'>
+            <div className='rounded-lg shadow-lg my-10 flex flex-row'>
                 <div className='lg:w-3/5 w-full bg-gradient-to-r from-black to-purple-900 lg:from-black
                  lg:via-purple-900 lg:to-transparent rounded-lg text-gray-100 p-12'>
                     <div className='lg:w-1/2'>

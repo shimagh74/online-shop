@@ -8,7 +8,7 @@ type CartItemsType = {
     productImage: string;
     productName: string;
     special_sale: Boolean;
-    count?: number;
+    count?: number | undefined;
 }
 type ShopContextProviderType = {
     children: React.ReactNode
@@ -47,7 +47,6 @@ export const ShopContextProvider = ({ children }: ShopContextProviderType) => {
             }))
         console.log("item", item)
     }
-
     // const removeFromCart = (id : number) :void  => {
     //     setCartItems(cartItems?.map((i) => {
     //         const count = i?.count - 1;
@@ -65,7 +64,6 @@ export const ShopContextProvider = ({ children }: ShopContextProviderType) => {
             )?.filter((item) => item && item.count && item.count > 0)
         );
     };
-
 
     const contextValue: IShopContext  = { cartItems, addToCart, removeFromCart }
     return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>
