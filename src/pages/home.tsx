@@ -99,7 +99,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='lg:w-2/5 w-full lg:flex lg:flex-row hidden'>
-                    <img src={Subscribe} className='h-96 lg:w-full rounded-lg' />
+                    <img src={Subscribe} className='h-96 lg:w-full rounded-lg ' />
                 </div>
             </div>
             <div className='gallery'>
